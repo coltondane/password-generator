@@ -37,10 +37,16 @@ function passwordSpecs() {
 // write generate password function
 function generatePassword() {
     var passLength = passwordSpecs();
-    console.log(passLength);
-    var password = Math.floor(Math.random()*availableChars.length);   
-    console.log(password);
-    console.log(availableChars[password]);
+    // create empty password string
+    var password = "";
+    // for loop the length of the password
+    for (let i = 0; i < passLength; i++) {
+        // choose a random number in the range of the password length
+        var randInt = Math.floor(Math.random()*availableChars.length);   
+        // choose a random character in the array corresponding to that number
+        password += (availableChars[randInt]);
+    }
+    return password;
 }
 // Write password to the #password input
 function writePassword() {
