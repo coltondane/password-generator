@@ -31,15 +31,19 @@ function passwordSpecs() {
   if (confirm("would you like to add special characters?")) {
     availableChars = availableChars.concat(specialChars);
   }
+  return charLength;
 }
 
 // write generate password function
 function generatePassword() {
-
+    var passLength = passwordSpecs();
+    console.log(passLength);
+    var password = Math.floor(Math.random()*availableChars.length);   
+    console.log(password);
+    console.log(availableChars[password]);
 }
 // Write password to the #password input
 function writePassword() {
-    passwordSpecs();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
