@@ -43,22 +43,29 @@ function generatePassword() {
     for (let i = 0; i < passLength; i++) {
         // choose a random number in the range of the password length
         var randInt = Math.floor(Math.random()*availableChars.length);   
-        // choose a random character in the array corresponding to that number
+        // choose a random character in the array corresponding to that number and add it to the string
         password += (availableChars[randInt]);
     }
     return password;
 }
 // Write password to the #password input
 function writePassword() {
+    init();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.textContent = password;
+    passwordText.textContent = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // makse function to clear values
-function init() {}
-init();
+function init() {
+    availableChars = [];
+    var clear = document.querySelector("#password");
+    clear.textContent = "";
+}
+
+
