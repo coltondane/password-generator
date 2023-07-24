@@ -51,10 +51,9 @@ function generatePassword() {
 // Write password to the #password input
 function writePassword() {
     init();
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-//   passwordText.textContent = password;
     passwordText.textContent = password;
 }
 
