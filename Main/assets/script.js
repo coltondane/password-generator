@@ -15,9 +15,9 @@ var availableChars = [];
 function passwordSpecs() {
   do {
     var charLength = prompt(
-      "How Many Characters Would You Like Your Password to be?"
+      "How Many Characters (8-128), Would You Like Your Password to be?"
     );
-  } while (charLength < 8 || charLength > 128);
+  } while ((charLength < 8 || charLength > 128));
   
   if (confirm("would you like lowercase characters?")) {
     availableChars = availableChars.concat(lowerCase);
